@@ -62,26 +62,6 @@ public class Imagem {
         y+=jobY/steps;
     }
 
-    Thread move(int amountX, int amountY, int times){
-          return   new Thread(()->{
-                double deltaX= amountX/times;
-                double deltaY= amountY/times;
-
-                double originalX=x;
-                double originalY=y;
-
-                for(int i=0;i<=times;i++){
-                    x=(int)(originalX+(i*deltaX));
-                    y=(int)(originalY+(i*deltaY));
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-           });
-    }
-
    public void fix(){
         x=originalX+jobX;
         y=originalY+jobY;
